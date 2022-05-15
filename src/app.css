@@ -10,8 +10,14 @@ body {
 }
 
 @font-face {
-	font-family: "Concourse";
+	font-family: "Concourse_3";
 	src: url("../static/concourse_3_regular.woff2") format("woff2");
+	font-style: normal;
+	font-variant-numeric: oldstyle-nums;
+}
+@font-face {
+	font-family: "Concourse_4";
+	src: url("../static/concourse_4_regular.woff2") format("woff2");
 	font-style: normal;
 	font-variant-numeric: oldstyle-nums;
 }
@@ -24,7 +30,7 @@ body {
 @layer components {
 
 	body {
-		@apply text-zinc-800 text-xl bg-stone-50
+		@apply text-zinc-800 text-base bg-stone-50
 	}
 	img {
 		@apply border rounded-md block mx-auto
@@ -57,10 +63,10 @@ body {
 		@apply font-semibold border-2 border-solid rounded-md outline-none focus:outline-none focus:bg-white focus:border-zinc-800 border-zinc-800 bg-zinc-50 text-zinc-800 focus:ring-0;
 	}
 	.label {
-		@apply my-2 font-semibold;
+		@apply my-2 font-sans font-semibold;
 	}
 	.input-text {
-		@apply w-full px-2 py-2 font-semibold border-2 border-solid rounded-md focus:bg-white focus:ring-0 focus:border-zinc-800 bg-zinc-50 border-zinc-800;
+		@apply px-2 py-2 font-semibold rounded-md focus:ring-0 w-full focus:outline-none;
 	}
 	.input-checkbox {
 		@apply w-4 h-4 border-2 border-solid rounded-sm focus:ring-0 text-zinc-800 border-zinc-800;

@@ -6,7 +6,7 @@ const config = {
 	theme: {
 		container: { center: true },
 		fontFamily: {
-			sans: ['Concourse', 'ui-sans-serif', 'system-ui'],
+			sans: ['Concourse_3', 'Concourse_4', 'ui-sans-serif', 'system-ui'],
 			serif: ['Equity', 'ui-serif']
 		},
 		extend: {}
