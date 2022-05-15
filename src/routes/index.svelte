@@ -150,7 +150,7 @@
 					bind:data={satIncrement}
 					background="background: linear-gradient(to right, #e0e0e0, 
 #11110d)"
-					min={1}
+					min={0}
 					max={30}
 					step={0.1}>Saturation Delta</Slider
 				>
@@ -158,7 +158,7 @@
 					bind:data={valIncrement}
 					background="background: linear-gradient(to right, #e0e0e0, 
 #11110d)"
-					min={1}
+					min={0}
 					max={10}
 					step={0.1}>Value Delta</Slider
 				>
