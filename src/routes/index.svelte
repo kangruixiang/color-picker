@@ -106,7 +106,7 @@
 </script>
 
 <main class=" h-screen w-screen flex bg-zinc-800 items-center justify-center">
-	<div class="w-full px-4 rounded-md shadow-xl sm:w-2/3 lg:w-1/2 max-w-6xl">
+	<div class="w-full px-4 rounded-md shadow-xl sm:w-2/3 lg:w-1/2 max-w-4xl">
 		<div
 			class="top rounded-t-md bg-red-600 p-8 h-80 flex flex-col"
 			style="background-color: {randomColor}"
