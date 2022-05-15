@@ -32,17 +32,13 @@
 		Math.max(0, Math.min(value - valIncrement * 2, 100)),
 		Math.max(0, Math.min(value - valIncrement * 3, 100))
 	];
-	let satVal = {};
-	// $: saturationAlt.forEach((key, i) => {
-	// 	satVal[key] = valueAlt[i];
-	// });
 
-	$: color2 = hslToHex(hue, saturationAlt[0], valueAlt[0]);
-	$: color3 = hslToHex(hue, saturationAlt[1], valueAlt[1]);
-	$: color4 = hslToHex(hue, saturationAlt[2], valueAlt[2]);
-	$: color5 = hslToHex(hue, saturationAlt[3], valueAlt[3]);
-	$: color6 = hslToHex(hue, saturationAlt[4], valueAlt[4]);
-	$: color7 = hslToHex(hue, saturationAlt[5], valueAlt[5]);
+	$: color7 = hslToHex(hue, saturationAlt[0], valueAlt[0]);
+	$: color6 = hslToHex(hue, saturationAlt[1], valueAlt[1]);
+	$: color5 = hslToHex(hue, saturationAlt[2], valueAlt[2]);
+	$: color4 = hslToHex(hue, saturationAlt[3], valueAlt[3]);
+	$: color3 = hslToHex(hue, saturationAlt[4], valueAlt[4]);
+	$: color2 = hslToHex(hue, saturationAlt[5], valueAlt[5]);
 	$: value > 50 ? (colorText = '#000') : (colorText = '#fff');
 
 	function hslToHex(h, s, l) {
@@ -123,12 +119,12 @@
 			</div>
 		</div>
 		<div class="grid grid-flow-col grid-cols-6 middle">
-			<Alternate color={color2} {satVal} />
-			<Alternate color={color3} {satVal} />
-			<Alternate color={color4} {satVal} />
-			<Alternate color={color5} {satVal} />
-			<Alternate color={color6} {satVal} />
-			<Alternate color={color7} {satVal} />
+			<Alternate color={color2} saturationAlt={saturationAlt[0]} valueAlt={valueAlt[0]} />
+			<Alternate color={color3} saturationAlt={saturationAlt[1]} valueAlt={valueAlt[1]} />
+			<Alternate color={color4} saturationAlt={saturationAlt[2]} valueAlt={valueAlt[2]} />
+			<Alternate color={color5} saturationAlt={saturationAlt[3]} valueAlt={valueAlt[3]} />
+			<Alternate color={color6} saturationAlt={saturationAlt[4]} valueAlt={valueAlt[4]} />
+			<Alternate color={color7} saturationAlt={saturationAlt[5]} valueAlt={valueAlt[5]} />
 		</div>
 		<div class="bottom rounded-b-md p-8 flex flex-col space-y-2 bg-stone-100">
 			<Slider
@@ -152,7 +148,7 @@
 #11110d)"
 					min={0}
 					max={15}
-					step={0.1}>Saturation Delta</Slider
+					step={0.1}>Saturation Steps</Slider
 				>
 				<Slider
 					bind:data={valIncrement}
@@ -160,7 +156,7 @@
 #11110d)"
 					min={0}
 					max={10}
-					step={0.1}>Value Delta</Slider
+					step={0.1}>Value Steps</Slider
 				>
 			</div>
 		</div>
