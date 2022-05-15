@@ -41,11 +41,11 @@
 	.slider::-moz-range-thumb {
 		width: 20px; /* Set a specific slider handle width */
 		height: 20px; /* Slider handle height */
-		background: #fbfbfb; /* Green background */
+		background: #191919; /* Green background */
 		cursor: pointer; /* Cursor on hover */
 		border-radius: 100%;
 		border: none;
 		/* border: 1px solid #191919; */
-		box-shadow: #7e7e7e 0px 2px 3px 0px;
+		/* box-shadow: #7e7e7e 0px 2px 3px 0px; */
 	}
 </style>
