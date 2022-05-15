@@ -151,7 +151,7 @@
 					background="background: linear-gradient(to right, #e0e0e0, 
 #11110d)"
 					min={0}
-					max={30}
+					max={15}
 					step={0.1}>Saturation Delta</Slider
 				>
 				<Slider
