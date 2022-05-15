@@ -105,8 +105,8 @@
 	}
 </script>
 
-<main class="container h-screen w-full flex bg-zinc-800 items-center justify-center">
-	<div class="rounded-md shadow-xl w-1/2">
+<main class=" h-screen w-screen flex bg-zinc-800 items-center justify-center">
+	<div class="w-full px-4 rounded-md shadow-xl sm:w-2/3 lg:w-1/2 max-w-6xl">
 		<div
 			class="top rounded-t-md bg-red-600 p-8 h-80 flex flex-col"
 			style="background-color: {randomColor}"
@@ -145,7 +145,7 @@
 				bind:data={value}
 				background="background: linear-gradient(to right, {value0}, {value100});"
 			/>
-			<div class="flex space-x-4">
+			<div class="md:flex md:space-x-4">
 				<Slider
 					bind:data={satIncrement}
 					background="background: linear-gradient(to right, #e0e0e0, 
