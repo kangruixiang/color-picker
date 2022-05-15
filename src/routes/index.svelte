@@ -17,12 +17,12 @@
 	$: value100 = hslToHex(hue, saturation, 90);
 
 	$: saturationAlt = [
-		Math.max(0, Math.min(saturation + satIncrement * 3, 100)),
-		Math.max(0, Math.min(saturation + satIncrement * 2, 100)),
-		Math.max(0, Math.min(saturation + satIncrement * 1, 100)),
-		Math.max(0, Math.min(saturation - satIncrement * 1, 100)),
+		Math.max(0, Math.min(saturation - satIncrement * 3, 100)),
 		Math.max(0, Math.min(saturation - satIncrement * 2, 100)),
-		Math.max(0, Math.min(saturation - satIncrement * 3, 100))
+		Math.max(0, Math.min(saturation - satIncrement * 1, 100)),
+		Math.max(0, Math.min(saturation + satIncrement * 1, 100)),
+		Math.max(0, Math.min(saturation + satIncrement * 2, 100)),
+		Math.max(0, Math.min(saturation + satIncrement * 3, 100))
 	];
 	$: valueAlt = [
 		Math.max(0, Math.min(value + valIncrement * 3, 100)),
