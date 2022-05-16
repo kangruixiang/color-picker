@@ -101,63 +101,70 @@
 	}
 </script>
 
-<main class=" h-screen w-screen flex bg-zinc-800 items-center justify-center">
-	<div class="w-full px-4 rounded-md shadow-xl sm:w-2/3 lg:w-1/2 max-w-4xl">
-		<div
-			class="top rounded-t-md bg-red-600 p-8 h-80 flex flex-col"
-			style="background-color: {randomColor}"
-		>
-			<div class="grow" />
-			<div class="self-end ">
-				<input
-					type="text"
-					class="input-text mt-8 w-24 focus:border-0 focus:ring-0 text-center"
-					bind:value={randomColor}
-					on:input={() => hexToHSL(randomColor)}
-					style="background-color: {color4}; color: {colorText}"
-				/>
+<main
+	class="h-screen w-screen items-center justify-center flex"
+	style="background-color: {randomColor}"
+>
+	<div
+		class="bg-zinc-800 items-center justify-center flex md:h-[95%] md:w-[95%] rounded-lg w-full h-full"
+	>
+		<div class="w-full md:p-4 rounded-md shadow-xl sm:w-2/3 lg:w-1/2 max-w-4xl">
+			<div
+				class="top rounded-t-md bg-red-600 p-8 h-80 flex flex-col"
+				style="background-color: {randomColor}"
+			>
+				<div class="grow" />
+				<div class="self-end ">
+					<input
+						type="text"
+						class="input-text mt-8 w-24 focus:border-0 focus:ring-0 text-center"
+						bind:value={randomColor}
+						on:input={() => hexToHSL(randomColor)}
+						style="background-color: {color4}; color: {colorText}"
+					/>
+				</div>
 			</div>
-		</div>
-		<div class="grid grid-flow-col grid-cols-6 middle">
-			<Alternate color={color2} saturationAlt={saturationAlt[5]} valueAlt={valueAlt[5]} />
-			<Alternate color={color3} saturationAlt={saturationAlt[4]} valueAlt={valueAlt[4]} />
-			<Alternate color={color4} saturationAlt={saturationAlt[3]} valueAlt={valueAlt[3]} />
-			<Alternate color={color5} saturationAlt={saturationAlt[2]} valueAlt={valueAlt[2]} />
-			<Alternate color={color6} saturationAlt={saturationAlt[1]} valueAlt={valueAlt[1]} />
-			<Alternate color={color7} saturationAlt={saturationAlt[0]} valueAlt={valueAlt[0]} />
-		</div>
-		<div class="bottom rounded-b-md p-8 flex flex-col space-y-2 bg-stone-100">
-			<Slider
-				bind:data={hue}
-				min={0}
-				max={360}
-				background="background: linear-gradient(to right, #d42b2b 0%, #cdcd32 17%, #54ab54 33%, #55aaaa 50%, #2020df 67%, #ab54ab 83%, #d42b2b 100%);"
-			/>
-			<Slider
-				bind:data={saturation}
-				background="background: linear-gradient(to right, {saturation0}, {saturation100});"
-			/>
-			<Slider
-				bind:data={value}
-				background="background: linear-gradient(to right, {value0}, {value100});"
-			/>
-			<div class="md:flex md:space-x-4">
+			<div class="grid grid-flow-col grid-cols-6 middle">
+				<Alternate color={color2} saturationAlt={saturationAlt[5]} valueAlt={valueAlt[5]} />
+				<Alternate color={color3} saturationAlt={saturationAlt[4]} valueAlt={valueAlt[4]} />
+				<Alternate color={color4} saturationAlt={saturationAlt[3]} valueAlt={valueAlt[3]} />
+				<Alternate color={color5} saturationAlt={saturationAlt[2]} valueAlt={valueAlt[2]} />
+				<Alternate color={color6} saturationAlt={saturationAlt[1]} valueAlt={valueAlt[1]} />
+				<Alternate color={color7} saturationAlt={saturationAlt[0]} valueAlt={valueAlt[0]} />
+			</div>
+			<div class="bottom rounded-b-md p-8 flex flex-col space-y-2 bg-stone-100">
 				<Slider
-					bind:data={satIncrement}
-					background="background: linear-gradient(to right, #e0e0e0, 
-#11110d)"
+					bind:data={hue}
 					min={0}
-					max={15}
-					step={0.1}>Saturation Steps</Slider
-				>
+					max={360}
+					background="background: linear-gradient(to right, #d42b2b 0%, #cdcd32 17%, #54ab54 33%, #55aaaa 50%, #2020df 67%, #ab54ab 83%, #d42b2b 100%);"
+				/>
 				<Slider
-					bind:data={valIncrement}
-					background="background: linear-gradient(to right, #e0e0e0, 
+					bind:data={saturation}
+					background="background: linear-gradient(to right, {saturation0}, {saturation100});"
+				/>
+				<Slider
+					bind:data={value}
+					background="background: linear-gradient(to right, {value0}, {value100});"
+				/>
+				<div class="md:flex md:space-x-4">
+					<Slider
+						bind:data={satIncrement}
+						background="background: linear-gradient(to right, #e0e0e0, 
 #11110d)"
-					min={0}
-					max={10}
-					step={0.1}>Value Steps</Slider
-				>
+						min={0}
+						max={15}
+						step={0.1}>Saturation Steps</Slider
+					>
+					<Slider
+						bind:data={valIncrement}
+						background="background: linear-gradient(to right, #e0e0e0, 
+#11110d)"
+						min={0}
+						max={10}
+						step={0.1}>Value Steps</Slider
+					>
+				</div>
 			</div>
 		</div>
 	</div>
