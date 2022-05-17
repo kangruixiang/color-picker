@@ -7,7 +7,7 @@
 </script>
 
 <div class="w-full">
-	<label for="" class="label">
+	<label for="slider" class="label">
 		<slot />
 		<div class="flex space-x-4 items-center">
 			<input
@@ -25,8 +25,6 @@
 </div>
 
 <style>
-	.slider {
-	}
 	.slider::-webkit-slider-thumb {
 		-webkit-appearance: none; /* Override default look */
 		appearance: none;
