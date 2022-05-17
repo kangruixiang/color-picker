@@ -136,7 +136,7 @@
 	style="background-color: {randomColor}"
 >
 	<div
-		class="bg-zinc-800 items-center justify-center flex md:h-[95%] md:w-[95%] rounded-lg w-full h-full overflow-y-auto flex-col"
+		class="bg-zinc-800 items-center justify-center flex  rounded-lg w-full h-full overflow-y-auto flex-col"
 	>
 		<div class="w-full md:p-4 rounded-md shadow-xl sm:w-2/3 lg:w-1/2 max-w-4xl">
 			<div class="top rounded-t-md p-8 h-80 flex flex-col " style="background-color: {randomColor}">
