@@ -140,7 +140,7 @@
 	>
 		<div class="color-portion flex flex-col xl:w-1/2 ">
 			<div
-				class="main-color rounded-t-md p-8 h-40 md:h-80 flex flex-col "
+				class="main-color rounded-t-md p-8 h-60 md:h-80 flex flex-col "
 				style="background-color: {randomColor}"
 			>
 				<div class="placeholder grow" />
