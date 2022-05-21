@@ -1,5 +1,5 @@
 <script>
-	export let data = '';
+	export let data = 0;
 	export let min = 0;
 	export let max = 100;
 	export let step = 1;
@@ -19,7 +19,7 @@
 				{max}
 				{step}
 			/>
-			<input type="text" class="input-text w-12" bind:value={data} />
+			<input type="number" class="input-text w-12" bind:value={data} />
 		</div>
 	</label>
 </div>
@@ -45,5 +45,13 @@
 		border: none;
 		/* border: 1px solid #191919; */
 		/* box-shadow: #7e7e7e 0px 2px 3px 0px; */
+	}
+
+	input[type='number']::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+
+	input[type='number'] {
+		-moz-appearance: textfield;
 	}
 </style>

@@ -7,17 +7,17 @@
 	import Alternate from '$lib/Alternate.svelte';
 
 	const hue = tweened(Math.floor(Math.random() * 360), {
-		duration: 200,
+		duration: 100,
 		easing: sineOut
 	});
 
 	const saturation = tweened(Math.floor(Math.random() * 100), {
-		duration: 200,
+		duration: 100,
 		easing: sineOut
 	});
 
 	const value = tweened(Math.floor(Math.random() * 100), {
-		duration: 200,
+		duration: 100,
 		easing: sineOut
 	});
 
@@ -54,6 +54,7 @@
 	$: color6 = hslToHex($hue, saturationAlt[1], valueAlt[1]);
 	$: color7 = hslToHex($hue, saturationAlt[0], valueAlt[0]);
 	$: $value > 50 ? (colorText = '#11110d') : (colorText = '#e0e0e0');
+	$: console.log($hue);
 
 	function hslToHex(h, s, l) {
 		l /= 100;
