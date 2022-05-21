@@ -133,24 +133,26 @@
 </script>
 
 <main
-	class="h-screen w-screen items-center justify-center flex"
-	style="background-color: {randomColor}"
+	class="h-screen w-screen items-center justify-center flex bg-zinc-800 rounded-lg overflow-y-auto flex-col "
 >
 	<div
-		class="bg-zinc-800 items-center justify-center flex  rounded-lg w-full h-full overflow-y-auto flex-col"
+		class="main-card w-full sm:w-2/3 xl:w-5/6 max-w-6xl flex flex-col xl:flex-row xl:space-x-8 shadow-xl xl:shadow-none"
 	>
-		<div class="w-full md:p-4 rounded-md shadow-xl sm:w-2/3 lg:w-1/2 max-w-4xl">
-			<div class="top rounded-t-md p-8 h-80 flex flex-col " style="background-color: {randomColor}">
-				<div class="grow" />
+		<div class="color-portion flex flex-col xl:w-1/2 ">
+			<div
+				class="main-color rounded-t-md p-8 h-40 md:h-80 flex flex-col "
+				style="background-color: {randomColor}"
+			>
+				<div class="placeholder grow" />
 				<div
-					class="self-end flex items-center justify-center rounded-md"
+					class="color-input self-end flex items-center justify-center rounded-md"
 					style="background-color: {color4}; color: {colorText}"
 				>
 					<input
 						type="text"
-						class="input-text   pr-0 w-20 focus:border-0 focus:ring-0 text-center"
+						class="input-text pr-0 w-20 focus:border-0 focus:ring-0 text-center"
 						bind:value={randomColor}
-						on:input={() => hexToHSL(randomColor)}
+						on:change={() => hexToHSL(randomColor)}
 						style="background-color: {color4}; color: {colorText}"
 					/>
 					<div
@@ -177,7 +179,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="grid grid-flow-col grid-cols-6 middle">
+			<div class="alternate-colors grid grid-cols-3 sm:grid-cols-6 middle rounded-md bg-zinc-700">
 				<Alternate
 					on:changeColor={changeColor}
 					color={color2}
@@ -215,61 +217,50 @@
 					valueAlt={valueAlt[0]}
 				/>
 			</div>
-			<!-- <Alternate
-				on:changeColor={changeColor}
-				color={newHue[0]}
-				saturationAlt={saturationAlt[0]}
-				valueAlt={valueAlt[0]}
-			/> -->
-			<div class="bottom rounded-b-md p-8 flex flex-col space-y-2 bg-stone-100">
+		</div>
+
+		<div
+			class="sliders rounded-b-md p-8 flex flex-col space-y-2 bg-stone-100 xl:w-1/2 xl:rounded-md"
+		>
+			<Slider
+				bind:data={$hue}
+				min={0}
+				max={360}
+				background="background: linear-gradient(to right, #d42b2b 0%, #cdcd32 17%, #54ab54 33%, #55aaaa 50%, #2020df 67%, #ab54ab 83%, #d42b2b 100%);"
+			/>
+			<Slider
+				bind:data={$saturation}
+				background="background: linear-gradient(to right, {saturation0}, {saturation100});"
+			/>
+			<Slider
+				bind:data={$value}
+				background="background: linear-gradient(to right, {value0}, {value100});"
+			/>
+			<div class="md:flex md:space-x-4">
 				<Slider
-					bind:data={$hue}
-					min={0}
-					max={360}
-					background="background: linear-gradient(to right, #d42b2b 0%, #cdcd32 17%, #54ab54 33%, #55aaaa 50%, #2020df 67%, #ab54ab 83%, #d42b2b 100%);"
-				/>
-				<Slider
-					bind:data={$saturation}
-					background="background: linear-gradient(to right, {saturation0}, {saturation100});"
-				/>
-				<Slider
-					bind:data={$value}
-					background="background: linear-gradient(to right, {value0}, {value100});"
-				/>
-				<div class="md:flex md:space-x-4">
-					<Slider
-						bind:data={satIncrement}
-						background="background: linear-gradient(to right, #e0e0e0, 
-#11110d)"
-						min={0}
-						max={15}
-						step={0.1}>Saturation Steps</Slider
-					>
-					<Slider
-						bind:data={valIncrement}
-						background="background: linear-gradient(to right, #e0e0e0, 
-#11110d)"
-						min={0}
-						max={10}
-						step={0.1}>Value Steps</Slider
-					>
-				</div>
-				<!-- <Slider
-					bind:data={hueIncrement}
+					bind:data={satIncrement}
 					background="background: linear-gradient(to right, #e0e0e0, 
 #11110d)"
 					min={0}
 					max={15}
-					step={0.3}>Hue Steps</Slider
-				> -->
+					step={0.1}>Saturation Steps</Slider
+				>
+				<Slider
+					bind:data={valIncrement}
+					background="background: linear-gradient(to right, #e0e0e0, 
+#11110d)"
+					min={0}
+					max={10}
+					step={0.1}>Value Steps</Slider
+				>
 			</div>
 		</div>
-		<button
-			class="btn mt-8"
-			on:click={random}
-			style="--hover-color: {color3}; --text: {colorText}; --color: {color2}">Random</button
-		>
 	</div>
+	<button
+		class="btn mt-8"
+		on:click={random}
+		style="--hover-color: {color3}; --text: {colorText}; --color: {color2}">Random</button
+	>
 </main>
 
 <style>

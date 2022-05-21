@@ -10,21 +10,15 @@
 	}
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col text-white text-center xl:rounded-b-md">
 	<div class="h-20 cursor-pointer" on:click={sendData} style="background-color: {color}" />
-	<div class="text-white text-center bg-zinc-700">
+	<div>
 		{color}
 	</div>
-	<div class="text-white text-center bg-zinc-700">
+	<div>
 		S: {Math.round(saturationAlt)}
 	</div>
-	<div class="text-white text-center bg-zinc-700">
+	<div class="xl:rounded-b-md">
 		V: {Math.round(valueAlt)}
 	</div>
-	<!-- <div class="text-white text-center bg-zinc-700">
-		{Object.keys(satVal)[0]}
-	</div>
-	<div class="text-white text-center bg-zinc-700">
-		{Object.values(satVal)[0]}
-	</div> -->
 </div>

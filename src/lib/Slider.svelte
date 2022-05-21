@@ -4,6 +4,12 @@
 	export let max = 100;
 	export let step = 1;
 	export let background = 'background: gray';
+
+	function handleInput(event) {
+		const value = parseInt(event.target.value);
+		if (isNaN(value)) return;
+		data = value;
+	}
 </script>
 
 <div class="w-full">
@@ -13,13 +19,19 @@
 			<input
 				type="range"
 				class="slider w-full appearance-none h-2 rounded-lg"
+				tabindex="-1"
 				style={background}
 				bind:value={data}
 				{min}
 				{max}
 				{step}
 			/>
-			<input type="number" class="input-text w-12" bind:value={data} />
+			<input
+				type="number"
+				class="input-text w-12"
+				on:change={handleInput}
+				value={Math.round(data)}
+			/>
 		</div>
 	</label>
 </div>
