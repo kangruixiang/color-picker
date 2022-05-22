@@ -136,11 +136,11 @@
 	class="h-screen w-screen items-center justify-center flex bg-zinc-800 rounded-lg overflow-y-auto flex-col "
 >
 	<div
-		class="main-card w-full sm:w-2/3 xl:w-5/6 max-w-6xl flex flex-col xl:flex-row xl:space-x-8 shadow-xl xl:shadow-none"
+		class="main-card w-full sm:w-2/3 lg:w-5/6 max-w-6xl flex flex-col lg:flex-row lg:space-x-8 shadow-xl lg:shadow-none"
 	>
-		<div class="color-portion flex flex-col xl:w-1/2 ">
+		<div class="color-portion lg:shadow-xl flex flex-col lg:w-1/2">
 			<div
-				class="main-color rounded-t-md p-8 h-60 md:h-80 flex flex-col "
+				class="main-color rounded-t-md p-8 h-60 md:h-80 flex flex-col"
 				style="background-color: {randomColor}"
 			>
 				<div class="placeholder grow" />
@@ -179,7 +179,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="alternate-colors grid grid-cols-3 sm:grid-cols-6 middle rounded-md bg-zinc-700">
+			<div
+				class="alternate-colors lg:shadow-xl grid grid-cols-3 sm:grid-cols-6 middle rounded-md bg-zinc-700"
+			>
 				<Alternate
 					on:changeColor={changeColor}
 					color={color2}
@@ -220,7 +222,7 @@
 		</div>
 
 		<div
-			class="sliders rounded-b-md p-8 flex flex-col space-y-2 bg-stone-100 xl:w-1/2 xl:rounded-md"
+			class="sliders rounded-b-md p-8 flex flex-col space-y-2 bg-stone-100 lg:w-1/2 lg:rounded-md lg:shadow-xl"
 		>
 			<Slider
 				bind:data={$hue}
@@ -254,13 +256,14 @@
 					step={0.1}>Value Steps</Slider
 				>
 			</div>
+			<div class="grow" />
+			<button
+				class="btn mt-8"
+				on:click={random}
+				style="--hover-color: {color3}; --text: {colorText}; --color: {color2}">Random</button
+			>
 		</div>
 	</div>
-	<button
-		class="btn mt-8"
-		on:click={random}
-		style="--hover-color: {color3}; --text: {colorText}; --color: {color2}">Random</button
-	>
 </main>
 
 <style>
