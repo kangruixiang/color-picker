@@ -1,4 +1,5 @@
 <script>
+	import { Motion } from 'svelte-motion';
 	import { tweened } from 'svelte/motion';
 	import { sineOut } from 'svelte/easing';
 	import { onMount } from 'svelte';
@@ -257,11 +258,14 @@
 				>
 			</div>
 			<div class="grow" />
-			<button
-				class="btn mt-8"
-				on:click={random}
-				style="--hover-color: {color3}; --text: {colorText}; --color: {color2}">Random</button
-			>
+			<Motion whileTap={{ scale: 0.99 }} let:motion>
+				<button
+					use:motion
+					class="btn mt-8"
+					on:click={random}
+					style="--hover-color: {color3}; --text: {colorText}; --color: {color2}">Random</button
+				>
+			</Motion>
 		</div>
 	</div>
 </main>
